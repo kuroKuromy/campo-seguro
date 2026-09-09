@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<HTML lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-with, intial-scale=1.0">
+    <title>PROJETO CAMPO SEGURO</title>
+
+    <style>
+        body{
+             background-image: url("fundo.jpg");
+             background-size: cover;
+             background-position: center;
+             background-attachment: fixed;
+         }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .banner {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        
+        }
+        .slide {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+        .slide.active {
+            opacity: 1;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* botões*/
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translatey(-50%);
+            background: rgba(0, 0, 0, 0);
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 25px;
+        }
+        .prev{
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .dots {
+            position: absolute;
+            bottom: 15px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin: 5px;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0.5;
+        }
+
+        .dot.active {
+            opacity: 1;
+        }
+        /* SEÇÃO DE VÍDEOS */
+
+.videos {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* TÍTULO */
+
+.videos h2 {
+    background-color: white;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+/* ÁREA DO VÍDEO */
+
+.video-container {
+    width: 50%;
+    background-color: black;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    display: block;
+}
+
+/* BOTÕES */
+
+.avaliacao {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.avaliacao button {
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.like {
+    background-color: #d8f3dc;
+}
+
+.deslike {
+    background-color: #ffd6d6;
+}
+
+.avaliacao button:hover {
+    transform: scale(1.05);
+}
+.video-titulo {
+    background-color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+.video-titulo h3 {
+    font-size: 22px;
+}
+.avaliacao {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.glow-on-hover {
+    width: 180px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #000000;
+    background: #818181;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(
+        45deg,
+        #48ff00,
+        #00ffd5,
+        #002bff
+    );
+
+    position: absolute;
+    top: -2px;
+    left: -2px;
+
+    background-size: 400%;
+
+    z-index: -1;
+
+    filter: blur(5px);
+
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+
+    animation: glowing 20s linear infinite;
+
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+
+    border-radius: 10px;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background: #ffffff;
+
+    left: 0;
+    top: 0;
+
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000000;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+    </style>
+</head>
+<body>
+    
+    <div class="banner">
+
+        <div class="slide active">
+            <img src="banner1.jpg" alt="Banner 1">
+        </div>
+
+        <div class="slide">
+            <img src="banner2.png" alt="Banner 2">
+        </div>
+
+        <div class="slide">
+            <img src="banner3.png" alt="Banner 3">
+        </div>
+
+        <button class="prev" onclick="mudarSlide(-1)">❮</button>
+        <button class="next" onclick="mudarSlide(1)">❯</button>
+
+        <div class="dots">
+            <span class="dot active" onclick="irParaSlide(0)"></span>
+            <span class="dot" onclick="irParaSlide(1)"></span>
+            <span class="dot" onclick="irParaSlide(2)"></span>
+        </div>
+    </div>
+    <section class="videos">
+
+    <h2>VÍDEOS</h2>
+
+    <div class="video-titulo">
+        <h3>Video de introdução</h3>
+    </div>
+
+    <!-- QUADRO DO VÍDEO -->
+    <div class="video-container">
+        <video controls>
+            <source src="ext video 1.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+        </video>
+    </div>
+
+    <!-- BOTÕES FORA DO QUADRO -->
+    <div class="avaliacao">
+
+        <button class="glow-on-hover like" onclick="darLike()">
+            👍 Like <span id="contadorLike">0</span>
+        </button>
+
+        <button class="glow-on-hover deslike" onclick="darDeslike()">
+            👎 Deslike <span id="contadorDeslike">0</span>
+        </button>
+        <script>
+
+    let slideAtual = 0;
+
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
+
+    function mostrarSlide(numero) {
+
+        slides.forEach(slide => {
+            slide.classList.remove("active");
+        });
+
+        dots.forEach(dot => {
+            dot.classList.remove("active");
+        });
+
+        slides[numero].classList.add("active");
+        dots[numero].classList.add("active");
+
+        slideAtual = numero;
+    }
+
+    function mudarSlide(direcao) {
+
+        slideAtual += direcao;
+
+        if (slideAtual >= slides.length) {
+            slideAtual = 0;
+        }
+
+        if (slideAtual < 0) {
+            slideAtual = slides.length - 1;
+        }
+
+        mostrarSlide(slideAtual);
+    }
+
+    function irParaSlide(numero) {
+        mostrarSlide(numero);
+    }
+
+    // Troca automaticamente a cada 4 segundos
+    setInterval(() => {
+        mudarSlide(1);
+    }, 4000);
+
+
+    // =========================
+    // LIKE E DESLIKE
+    // =========================
+
+    let likes = 0;
+    let deslikes = 0;
+
+    function darLike() {
+
+        likes++;
+
+        document.getElementById("contadorLike").textContent = likes;
+
+    }
+
+    function darDeslike() {
+
+        deslikes++;
+
+        document.getElementById("contadorDeslike").textContent = deslikes;
+
+    }
+
+</script>
+
+    </div>
+
+</section>
+
+    <script>
+        let slideAtual = 0;
+
+        const slides = document.querySelectorAll(".slide");
+        const dots = document.querySelectorAll(".dot");
+
+        function mostrarSlide(numero) {
+
+            slides.forEach(slide => {
+                slide.classList.remove("active");
+            });
+
+            dots.forEach(dot => {
+                dot.classList.remove("active");
+            });
+
+            slides[numero].classList.add("active");
+            dots[numero].classList.add("active");
+
+            slideAtual = numero;
+        }
+
+        function mudarSlide(direcao) {
+
+            slideAtual += direcao;
+
+            if (slideAtual >= slides.length) {
+                slideAtual = 0;
+            }
+
+            if (slideAtual < 0) {
+                slideAtual = slides.length - 1;
+            }
+
+            mostrarSlide(slideAtual);
+        }
+
+        function irParaSlide(numero) {
+            mostrarSlide(numero);
+        }
+
+        // Troca automaticamente a cada 4 segundos
+        setInterval(() => {
+            mudarSlide(1);
+        }, 4000);
+</body>
+</html>
