@@ -100,10 +100,22 @@
 /* ÁREA DO VÍDEO */
 
 .video-container {
-    width: 50%;
-    background-color: black;
-    border-radius: 15px;
-    overflow: hidden;
+    width: 100%;
+    max-width: 850px; /* Aumentamos a largura para caber o vídeo + texto */
+    background-color: rgb(2, 184, 48); 
+    border-radius: 15px; 
+    padding: 20px;
+    margin: 0 auto;
+    
+    display: flex; /* Alinha o vídeo e a descrição lado a lado */
+    gap: 20px; /* Espaço entre o vídeo e a descrição */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+/* CONTAINER DO VÍDEO E TÍTULO (LADO ESQUERDO) */
+.video-wrapper {
+    flex: 1; /* Ocupa metade do espaço */
+    min-width: 300px;
 }
 
 .video-container video {
@@ -111,13 +123,47 @@
     display: block;
 }
 
-/* BOTÕES */
+.video-titulo {
+    background-color: white;
+    padding: 10px 15px;
+    text-align: left;
+}
 
-.avaliacao {
-    margin-top: 15px;
+/* ÁREA DA DESCRIÇÃO (LADO DIREITO) */
+/* ÁREA DA DESCRIÇÃO (LADO DIREITO) */
+.video-descricao {
+    flex: 1;
+    color: white;
+    text-align: left;
+    font-family: sans-serif;
+    
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    height: 100%; /* Faz o container da descrição ocupar toda a altura disponível */
+}
+
+.video-descricao h4 {
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.video-descricao p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* BOTÕES NA PARTE INFERIOR DO QUADRO */
+.avaliacao {
+    margin-top: auto; /* Empurra os botões automaticamente para o fundo do quadro */
+    padding-top: 15px; /* Espaço de segurança entre o texto e os botões */
+    display: flex;
+    justify-content: flex-start;
     gap: 15px;
+}
+.video-container video {
+    width: 100%;
+    display: block;
 }
 
 .avaliacao button {
@@ -140,19 +186,14 @@
     transform: scale(1.05);
 }
 .video-titulo {
-    background-color: white;
+    background-color: rgb(0, 255, 98);
     padding: 15px;
     text-align: left;
 }
 
 .video-titulo h3 {
     font-size: 22px;
-}
-.avaliacao {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+    
 }
 
 .glow-on-hover {
@@ -211,7 +252,7 @@
     width: 100%;
     height: 100%;
 
-    background: #ffffff;
+    background: #07c5ff;
 
     left: 0;
     top: 0;
@@ -271,26 +312,130 @@
 
     <h2>VÍDEOS</h2>
 
-    <div class="video-titulo">
-        <h3>Video de introdução</h3>
-    </div>
-
     <!-- QUADRO DO VÍDEO -->
-    <div class="video-container">
+<div class="video-container">
+    
+    <!-- LADO ESQUERDO: VÍDEO E TÍTULO -->
+    <div class="video-wrapper">
+        <h3 class="video-titulo">Por que falar sobre defensivos agrícolas?</h3>
         <video controls>
             <source src="ext video 1.mp4" type="video/mp4">
             Seu navegador não suporta vídeos.
         </video>
     </div>
 
-    <!-- BOTÕES FORA DO QUADRO -->
-    <div class="avaliacao">
+    <!-- LADO DIREITO: DESCRIÇÃO -->
+    <div class="video-descricao">
+        <h4>Descrição</h4>
+        <p></p>
+        <p>[ABERTURA — 0:00 a 0:15]
 
-        <button class="glow-on-hover like" onclick="darLike()">
+Olá! Seja bem-vindo à nossa série Campo Seguro.
+
+Hoje vamos falar sobre um assunto muito importante para quem trabalha no campo: os defensivos agrícolas.
+
+Mas afinal, por que precisamos falar tanto sobre esse tema?</p>
+
+<p>[DESENVOLVIMENTO — 0:15 a 1:20]
+
+Os defensivos agrícolas são produtos utilizados na agricultura para auxiliar no controle de pragas, doenças e plantas daninhas que podem prejudicar as lavouras.
+
+Quando utilizados de maneira correta, seguindo as recomendações técnicas e as orientações do fabricante, eles podem contribuir para a proteção da cultura e para a produtividade.
+
+Porém, esses produtos também exigem muito cuidado.
+
+O uso inadequado, a falta de equipamentos de proteção, o armazenamento incorreto ou o descarte inadequado podem causar acidentes, intoxicações, contaminação do ambiente e outros riscos para trabalhadores, familiares, animais e para a própria propriedade.
+
+Por isso, segurança não significa apenas saber aplicar.
+
+Ela começa desde o momento da compra, transporte e armazenamento, passa pela preparação e aplicação e continua até o descarte correto das embalagens.</p>
+
+<P>[ENCERRAMENTO — 1:20 a 1:50]
+
+E é justamente esse o objetivo da nossa série Campo Seguro: trazer informações simples e importantes para ajudar você a trabalhar com mais segurança e responsabilidade.
+
+Nos próximos vídeos, vamos falar sobre rótulo e bula, armazenamento correto, equipamentos de proteção e outros cuidados essenciais.
+
+Lembre-se: produto agrícola exige responsabilidade. Informação também é uma forma de proteção.</P>
+
+        <p>Até o próximo vídeo!</p>
+    </div>
+
+</div>
+
+    <!-- BOTÕES FORA DO QUADRO -->
+
+        <button class="glow-on-hover like" onclick="enviarReacao(1, 'lIKE')">
             👍 Like <span id="contadorLike">0</span>
         </button>
 
-        <button class="glow-on-hover deslike" onclick="darDeslike()">
+        <button class="glow-on-hover deslike" onclick="enviarReacao(1, 'DESLIKE')">
+            👎 Deslike <span id="contadorDeslike">0</span>
+        </button>
+        <p>---------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<div class="video-container">
+    
+    <!-- LADO ESQUERDO: VÍDEO E TÍTULO -->
+    <div class="video-wrapper">
+        <h3 class="video-titulo">Armazenamento correto de defensivos agrícolas</h3>
+        <video controls>
+            <source src="armazenamento.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+        </video>
+    </div>
+
+    <!-- LADO DIREITO: DESCRIÇÃO -->
+    <div class="video-descricao">
+        <h4>Descrição</h4>
+        <p></p>
+        <p>[ABERTURA — 0:00 a 0:15]
+
+Você sabe se os defensivos agrícolas da sua propriedade estão armazenados corretamente?
+
+O armazenamento é uma etapa muito importante para evitar acidentes e proteger pessoas, animais e o meio ambiente.</p>
+
+<p>[DESENVOLVIMENTO — 0:15 a 1:25]
+
+O local destinado aos defensivos deve ser adequado, organizado, seguro e de acesso restrito.
+
+Os produtos devem permanecer em suas embalagens originais, devidamente identificadas e fechadas, seguindo as orientações do rótulo e da bula.
+
+Nunca devemos armazenar defensivos junto com alimentos, bebidas, rações, medicamentos, sementes ou outros produtos que possam ser contaminados.
+
+Também é importante manter o ambiente organizado, evitando que as embalagens fiquem espalhadas ou em locais onde possam cair, romper ou sofrer vazamentos.
+
+O local deve oferecer condições para reduzir o risco de exposição de pessoas e animais e deve ser utilizado exclusivamente de acordo com as exigências e orientações aplicáveis à propriedade.</p>
+
+<p>[ALERTA — 1:25 a 1:40]
+
+E atenção:
+
+Nunca transfira defensivos para garrafas, recipientes de alimentos ou outras embalagens que possam causar confusão.
+
+Além de ser perigoso, isso aumenta muito o risco de acidentes e intoxicações.</p>
+
+<p>[ENCERRAMENTO — 1:40 a 1:55]</p>
+
+<p>Então, lembre-se:</p>
+
+Armazene corretamente, mantenha o acesso restrito, organize os produtos e nunca misture defensivos com alimentos, rações ou medicamentos.
+
+Um armazenamento seguro começa com uma atitude simples: organização e responsabilidade.</p>
+
+<p>Esse é o Campo Seguro.</p>
+
+<P>Até o próximo vídeo!</p>
+    </div>
+
+</div>
+
+    <!-- BOTÕES FORA DO QUADRO -->
+
+        <button class="glow-on-hover like" onclick="enviarReacao(1, 'lIKE')">
+            👍 Like <span id="contadorLike">0</span>
+        </button>
+
+        <button class="glow-on-hover deslike" onclick="enviarReacao(1, 'DESLIKE')">
             👎 Deslike <span id="contadorDeslike">0</span>
         </button>
         <script>
@@ -339,31 +484,6 @@
     setInterval(() => {
         mudarSlide(1);
     }, 4000);
-
-
-    // =========================
-    // LIKE E DESLIKE
-    // =========================
-
-    let likes = 0;
-    let deslikes = 0;
-
-    function darLike() {
-
-        likes++;
-
-        document.getElementById("contadorLike").textContent = likes;
-
-    }
-
-    function darDeslike() {
-
-        deslikes++;
-
-        document.getElementById("contadorDeslike").textContent = deslikes;
-
-    }
-
 </script>
 
     </div>
@@ -415,5 +535,43 @@
         setInterval(() => {
             mudarSlide(1);
         }, 4000);
+        function enviarReacao(conteudoId, tipo) {
+            // Modifique a URL abaixo para bater exatamente na rota do seu servidor Java
+            fetch(`/api/reacoes/${conteudoId}?tipo=${tipo}`, { method: 'POST' })
+                .then(response => {
+                    if (!response.ok) throw new Error("Erro na requisição");
+                    return response.json(); // Espera os novos totais em formato JSON
+                })
+                .then(dados => {
+                    // Atualiza os números da tela com o valor real vindo do banco
+                    document.getElementById("contadorLike").textContent = dados.totalLikes;
+                    document.getElementById("contadorDeslike").textContent = dados.totalDislikes;
+                })
+                .catch(error => {
+                    console.error("Erro ao salvar voto no servidor:", error);
+                    alert("Não foi possível registrar seu voto.");
+                });
+        }
+
+        // 2. Função para buscar os dados assim que o usuário abrir o site
+        function buscarVotosIniciais(conteudoId) {
+            fetch(`/api/reacoes/${conteudoId}`)
+                .then(response => {
+                    if (response.ok) return response.json();
+                })
+                .then(dados => {
+                    if (dados) {
+                        document.getElementById("contadorLike").textContent = dados.totalLikes;
+                        document.getElementById("contadorDeslike").textContent = dados.totalDislikes;
+                    }
+                })
+                .catch(error => console.error("Erro ao carregar votos:", error));
+        }
+
+        // Executa a busca automática ao abrir a página para o vídeo ID 1
+        window.onload = function() {
+            buscarVotosIniciais(1);
+        };
+    </script>
 </body>
 </html>

@@ -1,17 +1,29 @@
-let likes = 0;
-let deslikes = 0;
+function enviarReacao(conteudoId, tipo) {
 
-function darLike() {
+    fetch(`/api/reacoes/${conteudoId}?tipo=${tipo}`, {
+        method: 'POST'
+    })
+    .then(response => {
 
-    likes++;
+        if (!response.ok) {
+            throw new Error("Erro na requisição");
+        }
 
-    document.getElementById("contadorLike").textContent = likes;
+        return response.json();
+    })
+    .then(dados => {
 
-}
+        document.getElementById("contadorLike").textContent =
+            dados.totalLikes;
 
-function darDeslike() {
+        document.getElementById("contadorDeslike").textContent =
+            dados.totalDislikes;
 
-    deslikes++;
+    })
+    .catch(error => {
 
-    document.getElementById("contadorDeslike").textContent = deslikes;
+        console.error("Erro ao salvar voto:", error);
+        alert("Não foi possível registrar seu voto.");
+
+    });
 }
