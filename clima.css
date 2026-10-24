@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    background: #fff;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 425px;
+    padding: 10px;
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Previsão por hora na horizontal */
+.hourly-weather .weather-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+}
+
+/* Cada previsão */
+.hourly-weather .weather-item {
+    flex: 1;
+    min-width: 0;
+}
