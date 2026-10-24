@@ -613,6 +613,39 @@ Um armazenamento seguro começa com uma atitude simples: organização e respons
 
 <p>---------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
 
+```html
+<script>
+    // Controle do banner rotativo
+    let slideAtual = 0;
+
+    const slides = document.querySelectorAll(".banner .slide");
+    const dots = document.querySelectorAll(".banner .dot");
+
+    function mostrarSlide(indice) {
+        slides[slideAtual].classList.remove("active");
+        dots[slideAtual].classList.remove("active");
+
+        slideAtual = (indice + slides.length) % slides.length;
+
+        slides[slideAtual].classList.add("active");
+        dots[slideAtual].classList.add("active");
+    }
+
+    // Botões de navegação
+    function mudarSlide(direcao) {
+        mostrarSlide(slideAtual + direcao);
+    }
+
+    // Navegação pelos pontinhos
+    function irParaSlide(indice) {
+        mostrarSlide(indice);
+    }
+
+    // Troca automática a cada 5 segundos
+    setInterval(function() {
+        mudarSlide(1);
+    }, 5000);
+</script>
 <script>
     // Botão Clima
     const botaoFundoClima = document.getElementById("botaoFundoclima");
