@@ -139,19 +139,19 @@
             width: 90%;
             max-width: 1000px;
             margin: 40px auto;
-            background-color: rgb(207, 255, 206); 
+            background-color: rgb(237, 231, 219); 
             padding: 40px 30px; 
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         .videos > h2 {
-            background-color: #74a681;
+            background-color: #002004;
             padding: 15px;
             border-radius: 8px;
             margin-bottom: 30px;
             text-align: center;
-            color: #333;
+            color: #EDE7DB;
         }
 
         /* ÁREA DO VÍDEO (SEM CANTOS ARREDONDADOS E COM CORES DA PALETA) */
@@ -166,17 +166,16 @@
             align-items: center; 
         }
 
-        /* Cores individuais baseadas na imagem da paleta (alternadas) */
         .video-container.cor-cafe {
-            background-color: #4C3D19; /* Café Noir */[cite: 5]
+            background-color: #4C3D19;
         }
 
         .video-container.cor-kombu {
-            background-color: #354024; /* Kombu Green */[cite: 5]
+            background-color: #354024;
         }
 
         .video-container.cor-moss {
-            background-color: #889063; /* Moss Green */[cite: 5]
+            background-color: #889063;
         }
 
         .video-wrapper {
@@ -342,6 +341,39 @@
             100% { background-position: 0 0; }
         }
 
+        /* ================= RODAPÉ ================= */
+        .rodape {
+            width: 100%;
+            background-color: #354024;
+            color: #f0f0f0;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+            border-top: 4px solid #889063;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
+        }
+
+        .rodape-titulo {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        .rodape-creditos {
+            font-size: 15px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 12px auto;
+            color: #e0e0e0;
+        }
+
+        .rodape-copy {
+            font-size: 13px;
+            color: #b5bda5;
+        }
+
         /* Responsividade para celulares */
         @media (max-width: 768px) {
             .botoes-topo {
@@ -407,7 +439,7 @@
 
             <a href="https://cepea.org.br/br/areas-de-pesquisa.aspx">
                 <button class="glow-on-hover-preco" id="botaoFundopreco">
-                    <h2>Preços</h2>
+                    <h2>Cepea</h2>
                 </button>
             </a>
         </div>
@@ -559,6 +591,15 @@
             </div>
         </div>
     </section>
+
+    <!-- RODAPÉ COM OS CRÉDITOS -->
+    <footer class="rodape">
+        <p class="rodape-titulo">PROJETO CAMPO SEGURO</p>
+        <p class="rodape-creditos">
+            Desenvolvido por: <strong>Heloisa Moraes</strong>, <strong>Bruna Almeida</strong>, <strong>Luis Felipe Ferreira Da Silva</strong>, <strong>Pedro Marques Parpinelli</strong>, <strong>Gabriel Ribeiro Paes</strong> e <strong>Mateus Martins</strong>.
+        </p>
+        <p class="rodape-copy">&copy; 2026 Projeto Campo Seguro.</p>
+    </footer>
 
     <script>
         // Controle do banner rotativo
