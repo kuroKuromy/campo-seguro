@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<HTML lang="pt-br">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-with, intial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROJETO CAMPO SEGURO</title>
 
     <style>
         body{
             align-items: center;
             justify-content: center;
-             background-image: url("fundo.jpg");
-             background-size: cover;
-             background-position: center;
-             background-attachment: fixed;
+            background-image: url("fundo 2.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: sans-serif;
          }
         *{
             margin: 0;
@@ -24,15 +25,14 @@
             height: 300px;
             position: relative;
             overflow: hidden;
-        
         }
         .slide {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        opacity: 0;
-        transition: opacity 1s ease;
-    }
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
         .slide.active {
             opacity: 1;
         }
@@ -41,18 +41,19 @@
             height: 100%;
             object-fit: cover;
         }
-        /* botões*/
+        /* botões do banner */
         .prev,
         .next {
             position: absolute;
             top: 50%;
-            transform: translatey(-50%);
+            transform: translateY(-50%);
             background: rgba(0, 0, 0, 0);
             color: white;
             border: none;
             padding: 15px;
             cursor: pointer;
             font-size: 25px;
+            z-index: 2;
         }
         .prev{
             left: 10px;
@@ -65,6 +66,7 @@
             bottom: 15px;
             width: 100%;
             text-align: center;
+            z-index: 2;
         }
 
         .dot {
@@ -81,379 +83,299 @@
         .dot.active {
             opacity: 1;
         }
-        /* SEÇÃO DE VÍDEOS */
-
-.videos {
-    width: 90%;
-    max-width: 1000px;
-    margin: 40px auto;
-    text-align: center;
-}
-
-/* TÍTULO */
-
-.videos h2 {
-    background-color: white;
-    padding: 15px;
-    border-radius: 15px;
-    margin-bottom: 25px;
-}
-
-/* ÁREA DO VÍDEO */
-
-.video-container {
-    width: 100%;
-    max-width: 850px; /* Aumentamos a largura para caber o vídeo + texto */
-    background-color: rgb(2, 184, 48); 
-    border-radius: 15px; 
-    padding: 20px;
-    margin: 0 auto;
-    
-    display: flex; /* Alinha o vídeo e a descrição lado a lado */
-    gap: 20px; /* Espaço entre o vídeo e a descrição */
-    align-items: center; /* Centraliza verticalmente */
-}
-
-/* CONTAINER DO VÍDEO E TÍTULO (LADO ESQUERDO) */
-.video-wrapper {
-    flex: 1; /* Ocupa metade do espaço */
-    min-width: 300px;
-}
-
-.video-container video {
-    width: 100%;
-    display: block;
-}
-
-.video-titulo {
-    background-color: white;
-    padding: 10px 15px;
-    text-align: left;
-}
-
-/* ÁREA DA DESCRIÇÃO (LADO DIREITO) */
-/* ÁREA DA DESCRIÇÃO (LADO DIREITO) */
-.video-descricao {
-    flex: 1;
-    color: white;
-    text-align: left;
-    font-family: sans-serif;
-    
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* Faz o container da descrição ocupar toda a altura disponível */
-}
-
-.video-descricao h4 {
-    font-size: 18px;
-    margin-top: 0px;
-    margin-bottom: 10px;
-}
-
-.video-descricao p {
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-/* BOTÕES NA PARTE INFERIOR DO QUADRO */
-.avaliacao {
-    margin-top: auto; /* Empurra os botões automaticamente para o fundo do quadro */
-    padding-top: 15px; /* Espaço de segurança entre o texto e os botões */
-    display: flex;
-    justify-content: flex-start;
-    gap: 15px;
-}
-.video-container video {
-    width: 100%;
-    display: block;
-}
-
-.avaliacao button {
-    border: none;
-    padding: 12px 25px;
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.like {
-    background-color: #d8f3dc;
-}
-
-.deslike {
-    background-color: #ffd6d6;
-}
-
-.video-titulo {
-    background-color: rgb(0, 255, 98);
-    padding: 15px;
-    text-align: left;
-}
-
-.video-titulo h3 {
-    font-size: 22px;
-    
-}
-
-.glow-on-hover-clima{
-    position: relative;
-    top: 60px;
-    left: 350px;
-    width: 180px;
-    height: 50px;
-    border: none;
-    outline: none;
-    color: #000000;
-    background: #818181;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-    font-size: 16px;
-    transition: ;
-}
-
-.glow-on-hover-clima:before {
-    content: '';
-    background: linear-gradient(
-        45deg,
-        #002fff,
-        #00ffd5,
-        #002bff
-    );
-
-    position: absolute;
-    top: -2px;
-    left: -2px;
-
-    background-size: 400%;
-
-    z-index: -1;
-
-    filter: blur(5px);
-
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-
-    animation: glowing 20s linear infinite;
-
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-
-    border-radius: 10px;
-}
-
-.glow-on-hover-clima:hover:before {
-    opacity: 1;
-}
-
-.glow-on-hover-clima:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-
-    width: 100%;
-    height: 100%;
-
-    background: #07ff83;
-
-    left: 0;
-    top: 0;
-
-    border-radius: 10px;
-}
-
-.glow-on-hover-clima:active {
-    color: #000000;
-}
-
-.glow-on-hover-clima:active:after {
-    background: white;
-}
-
-.glow-on-hover-avaliacao{
-    position: relative;
-    top: 10px;
-    left: 600px;
-    width: 180px;
-    height: 50px;
-    border: none;
-    outline: none;
-    color: #000000;
-    background: #818181;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-    font-size: 16px;
-    transition: ;
-}
-
-.glow-on-hover-avaliacao:before {
-    content: '';
-    background: linear-gradient(
-        45deg,
-        #002fff,
-        #00ffd5,
-        #002bff
-    );
-
-    position: absolute;
-    top: -2px;
-    left: -2px;
-
-    background-size: 400%;
-
-    z-index: -1;
-
-    filter: blur(5px);
-
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-
-    animation: glowing 20s linear infinite;
-
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-
-    border-radius: 10px;
-}
-
-.glow-on-hover-avaliacao:hover:before {
-    opacity: 1;
-}
-
-.glow-on-hover-avaliacao:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-
-    width: 100%;
-    height: 100%;
-
-    background: #00dd94;
-
-    left: 0;
-    top: 0;
-
-    border-radius: 10px;
-}
-
-.glow-on-hover-avaliacao:active {
-    color: #000000;
-}
-
-.glow-on-hover-avaliacao:active:after {
-    background: white;
-}
-
-.glow-on-hover-preco{
-    position: relative;
-    top: -41px;
-    left: 850px;
-    width: 180px;
-    height: 50px;
-    border: none;
-    outline: none;
-    color: #000000;
-    background: #818181;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-    font-size: 16px;
-    transition: ;
-}
-
-.glow-on-hover-preco:before {
-    content: '';
-    background: linear-gradient(
-        45deg,
-        #00470f,
-        #00ff55,
-        #00ff80
-    );
-
-    position: absolute;
-    top: -2px;
-    left: -2px;
-
-    background-size: 400%;
-
-    z-index: -1;
-
-    filter: blur(5px);
-
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-
-    animation: glowing 20s linear infinite;
-
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-
-    border-radius: 10px;
-}
-
-.glow-on-hover-preco:hover:before {
-    opacity: 1;
-}
-
-.glow-on-hover-preco:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-
-    width: 100%;
-    height: 100%;
-
-    background: #005236;
-
-    left: 0;
-    top: 0;
-
-    border-radius: 10px;
-}
-
-.glow-on-hover-preco:active {
-    color: #000000;
-}
-
-.glow-on-hover-preco:active:after {
-    background: white;
-}
-@keyframes glowing {
-    0% {
-        background-position: 0 0;
-    }
-
-    50% {
-        background-position: 400% 0;
-    }
-
-    100% {
-        background-position: 0 0;
-    }
-}
+
+        /* ================= SEÇÃO DE INTRODUÇÃO ================= */
+        .intro-hero {
+            width: 90%;
+            max-width: 1000px;
+            min-height: 400px;
+            margin: 40px auto;
+            border-radius: 20px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("banner1.jpg");
+            background-size: cover;
+            background-position: center;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .botoes-topo {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .botoes-topo a {
+            text-decoration: none;
+        }
+
+        .intro-texto {
+            margin: auto 0;
+            padding: 20px;
+        }
+
+        .intro-texto h1 {
+            font-size: clamp(26px, 4vw, 42px);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+        }
+
+        .intro-texto p {
+            font-size: clamp(14px, 2vw, 18px);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ================= GRANDE QUADRO BRANCO ENVOLVENDO OS VÍDEOS ================= */
+        .videos {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+            background-color: rgb(207, 255, 206); 
+            padding: 40px 30px; 
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .videos > h2 {
+            background-color: #74a681;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #333;
+        }
+
+        /* ÁREA DO VÍDEO (SEM CANTOS ARREDONDADOS E COM CORES DA PALETA) */
+        .video-container {
+            width: 100%;
+            max-width: 850px; 
+            border-radius: 0px; 
+            padding: 20px;
+            margin: 0 auto 30px auto; 
+            display: flex; 
+            gap: 20px; 
+            align-items: center; 
+        }
+
+        /* Cores individuais baseadas na imagem da paleta (alternadas) */
+        .video-container.cor-cafe {
+            background-color: #4C3D19; /* Café Noir */[cite: 5]
+        }
+
+        .video-container.cor-kombu {
+            background-color: #354024; /* Kombu Green */[cite: 5]
+        }
+
+        .video-container.cor-moss {
+            background-color: #889063; /* Moss Green */[cite: 5]
+        }
+
+        .video-wrapper {
+            flex: 1; 
+            min-width: 300px;
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+            border-radius: 0px; 
+        }
+
+        .video-titulo {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            text-align: left;
+            border-radius: 0px; 
+        }
+
+        .video-titulo h3 {
+            font-size: 20px;
+            color: #222;
+        }
+
+        .video-descricao {
+            flex: 1;
+            color: white;
+            text-align: left;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100%; 
+        }
+
+        .video-descricao h4 {
+            font-size: 18px;
+            margin-top: 0px;
+            margin-bottom: 10px;
+        }
+
+        .video-descricao p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        /* ================= ESTILOS DOS BOTÕES DO TOPO ================= */
+        .glow-on-hover-clima,
+        .glow-on-hover-avaliacao,
+        .glow-on-hover-preco {
+            width: 180px;
+            height: 50px;
+            border: none;
+            outline: none;
+            color: #000000;
+            background: #818181;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        .glow-on-hover-clima h2,
+        .glow-on-hover-avaliacao h2,
+        .glow-on-hover-preco h2 {
+            font-size: 20px;
+        }
+
+        .glow-on-hover-clima:before,
+        .glow-on-hover-avaliacao:before {
+            content: '';
+            background: linear-gradient(45deg, #002fff, #00ffd5, #002bff);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .glow-on-hover-preco:before {
+            content: '';
+            background: linear-gradient(45deg, #00470f, #00ff55, #00ff80);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .glow-on-hover-clima:hover:before,
+        .glow-on-hover-avaliacao:hover:before,
+        .glow-on-hover-preco:hover:before {
+            opacity: 1;
+        }
+
+        .glow-on-hover-clima:after {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #07ff83;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+
+        .glow-on-hover-avaliacao:after {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #00dd94;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+
+        .glow-on-hover-preco:after {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #005236;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+
+        .glow-on-hover-clima:active,
+        .glow-on-hover-avaliacao:active,
+        .glow-on-hover-preco:active {
+            color: #000000;
+        }
+
+        .glow-on-hover-clima:active:after,
+        .glow-on-hover-avaliacao:active:after,
+        .glow-on-hover-preco:active:after {
+            background: white;
+        }
+
+        @keyframes glowing {
+            0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
+        }
+
+        /* Responsividade para celulares */
+        @media (max-width: 768px) {
+            .botoes-topo {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .glow-on-hover-clima,
+            .glow-on-hover-avaliacao,
+            .glow-on-hover-preco {
+                width: 100%;
+                max-width: 220px;
+            }
+            .video-container {
+                flex-direction: column;
+            }
+            .videos {
+                padding: 20px 10px;
+            }
+        }
     </style>
-    <title>app clima</title>
     
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="stylesheet" href="clima.css">
 </head>
 <body>
     
+    <!-- BANNER -->
     <div class="banner">
-
         <div class="slide active">
             <img src="banner1.jpg" alt="Banner 1">
         </div>
-
         <div class="slide">
             <img src="banner2.png" alt="Banner 2">
         </div>
-
         <div class="slide">
             <img src="banner3.png" alt="Banner 3">
         </div>
@@ -466,345 +388,234 @@
             <span class="dot" onclick="irParaSlide(1)"></span>
             <span class="dot" onclick="irParaSlide(2)"></span>
         </div>
-
-        
     </div>
-    <div>
-        <div>
+
+    <!-- INTRODUÇÃO COM OS BOTÕES EM CIMA DA IMAGEM -->
+    <section class="intro-hero">
+        <div class="botoes-topo">
             <a href="//www.ipmetradar.com.br/">
-            <button class="glow-on-hover-clima" id="botaoFundoclima"li>
-                <H2>
-                    Clima
-                </H2>
-            </button>
-        </a>
-        </div>
-        <div>
+                <button class="glow-on-hover-clima" id="botaoFundoclima">
+                    <h2>Clima</h2>
+                </button>
+            </a>
+
             <a href="https://forms.gle/GeUafuJLUC6qytnK9">
                 <button class="glow-on-hover-avaliacao" id="botaoFundoavaliacao">
-                    <H2>
-                        Avalie-nos
-                    </H2>
+                    <h2>Avalie-nos</h2>
                 </button>
             </a>
-        </div>
 
-        <div>
             <a href="https://cepea.org.br/br/areas-de-pesquisa.aspx">
                 <button class="glow-on-hover-preco" id="botaoFundopreco">
-                    <H2>
-                        preços
-                    </H2>
+                    <h2>Preços</h2>
                 </button>
             </a>
         </div>
-    </div>
+
+        <div class="intro-texto">
+            <h1>Projeto Campo Seguro</h1>
+            <p>Informação e responsabilidade no campo.</p>
+        </div>
+
+        <div></div>
+    </section>
+
+    <!-- GRANDE QUADRO BRANCO ENVOLVENDO OS VÍDEOS -->
     <section class="videos">
+        <h2>VÍDEOS</h2>
 
-    <h2>VÍDEOS</h2>
+        <!-- VÍDEO 1 (Cor: Café Noir) -->
+        <div class="video-container cor-cafe">
+            <div class="video-wrapper">
+                <div class="video-titulo">
+                    <h3>Por que falar sobre defensivos agrícolas?</h3>
+                </div>
+                <video controls>
+                    <source src="ext video 1.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+            </div>
 
-    <!-- QUADRO DO VÍDEO -->
-<div class="video-container">
+            <div class="video-descricao">
+                <h4>Descrição</h4>
+                <p>[ABERTURA — 0:00 a 0:15]<br>
+                Olá! Seja bem-vindo à nossa série Campo Seguro. Hoje vamos falar sobre um assunto muito importante para quem trabalha no campo: os defensivos agrícolas. Mas afinal, por que precisamos falar tanto sobre esse tema?</p>
+                <p>[DESENVOLVIMENTO — 0:15 a 1:20]<br>
+                Os defensivos agrícolas são produtos utilizados na agricultura para auxiliar no controle de pragas, doenças e plantas daninhas que podem prejudicar as lavouras. Quando utilizados de maneira correta, seguindo as recomendações técnicas e as orientações do fabricante, eles podem contribuir para a proteção da cultura e para a produtividade.<br>
+                Porém, esses produtos também exigem muito cuidado. O uso inadequado, a falta de equipamentos de proteção, o armazenamento incorreto ou o descarte inadequado podem causar acidentes, intoxicações e contaminação do ambiente.</p>
+                <p>[ENCERRAMENTO — 1:20 a 1:50]<br>
+                E é justamente esse o objetivo da nossa série Campo Seguro: trazer informações simples e importantes para ajudar você a trabalhar com mais segurança e responsabilidade. Até o próximo vídeo!</p>
+            </div>
+        </div>
+
+        <!-- VÍDEO 2 (Cor: Kombu Green) -->
+        <div class="video-container cor-kombu">
+            <div class="video-wrapper">
+                <div class="video-titulo">
+                    <h3>Armazenamento correto de defensivos agrícolas</h3>
+                </div>
+                <video controls>
+                    <source src="armazenamento.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+            </div>
+
+            <div class="video-descricao">
+                <h4>Descrição</h4>
+                <p>[ABERTURA — 0:00 a 0:15]<br>
+                Você sabe se os defensivos agrícolas da sua propriedade estão armazenados corretamente? O armazenamento é uma etapa muito importante para evitar acidentes e proteger pessoas, animais e o meio ambiente.</p>
+                <p>[DESENVOLVIMENTO — 0:15 a 1:25]<br>
+                O local destinado aos defensivos deve ser adequado, organizado, seguro e de acesso restrito. Os produtos devem permanecer em suas embalagens originais, devidamente identificadas e fechadas, seguindo as orientações do rótulo e da bula. Nunca devemos armazenar defensivos junto com alimentos, bebidas ou rações.</p>
+                <p>[ENCERRAMENTO — 1:40 a 1:55]<br>
+                Então, lembre-se: armazene corretamente, mantenha o acesso restrito e organize os produtos. Um armazenamento seguro começa com uma atitude simples: organização e responsabilidade. Esse é o Campo Seguro!</p>
+            </div>
+        </div>
+
+        <!-- VÍDEO 3 (Cor: Moss Green) -->
+        <div class="video-container cor-moss">
+            <div class="video-wrapper">
+                <div class="video-titulo">
+                    <h3>Equipamentos de Proteção Individual — EPIs</h3>
+                </div>
+                <video controls>
+                    <source src="ext video 4.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+            </div>
+
+            <div class="video-descricao">
+                <h4>Descrição</h4>
+                <p>[ABERTURA — 0:00 a 0:15]<br>
+                Você sabe por que os equipamentos de proteção individual, os famosos EPIs, são tão importantes durante o trabalho com defensivos agrícolas? Eles são uma das principais medidas para reduzir a exposição do trabalhador.</p>
+                <p>[DESENVOLVIMENTO — 0:15 a 1:25]<br>
+                Durante o preparo e a aplicação, pode existir risco de contato com o produto pela pele, pelos olhos ou pela respiração. Por isso, é fundamental utilizar os EPIs indicados para aquela atividade e para aquele produto, sempre em boas condições de uso.</p>
+                <p>[ENCERRAMENTO — 1:40 a 1:55]<br>
+                No Campo Seguro, a regra é simples: EPI adequado, conservação correta e utilização responsável. Esse é o Campo Seguro. Até o próximo vídeo!</p>
+            </div>
+        </div>
+
+        <!-- VÍDEO 6 (Cor: Café Noir) -->
+        <div class="video-container cor-cafe">
+            <div class="video-wrapper">
+                <div class="video-titulo">
+                    <h3>Tecnologia como aliada do produtor</h3>
+                </div>
+                <video controls>
+                    <source src="tecnologia aliada.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+            </div>
+
+            <div class="video-descricao">
+                <h4>Descrição</h4>
+                <p>[ABERTURA — 0:00 a 0:15]<br>
+                Hoje, o produtor rural tem uma grande aliada na palma da mão: a tecnologia.<br>
+                Um celular pode ajudar a encontrar informações importantes para tomar decisões mais seguras no campo.</p>
+                <p>[DESENVOLVIMENTO — 0:15 a 1:25]<br>
+                Existem sites e aplicativos que oferecem informações agrícolas, meteorológicas e técnicas.<br>
+                Os QR Codes presentes em materiais e embalagens também podem facilitar o acesso a informações complementares, quando disponibilizados oficialmente.<br>
+                A previsão meteorológica é outra ferramenta importante para o planejamento das atividades agrícolas.<br>
+                Mapas podem ajudar na identificação e organização das áreas da propriedade.<br>
+                Também existem ferramentas de gestão que auxiliam no controle de atividades, registros e planejamento.<br>
+                Mas existe uma regra importante: procure sempre informações em fontes confiáveis e oficiais.<br>
+                Na dúvida sobre uma recomendação, não confie apenas em mensagens encaminhadas ou informações encontradas nas redes sociais.</p>
+                <p>[ENCERRAMENTO — 1:25 a 1:55]<br>
+                Tecnologia não substitui conhecimento técnico.<br>
+                Ela é uma ferramenta para ajudar o produtor a buscar informação, planejar e tomar decisões com mais segurança.<br>
+                Use a tecnologia a seu favor.<br>
+                Informação confiável também é uma ferramenta de trabalho.<br>
+                Esse é o Campo Seguro.</p>
+            </div>
+        </div>
+
+        <!-- VÍDEO 7 (Cor: Kombu Green) -->
+        <div class="video-container cor-kombu">
+            <div class="video-wrapper">
+                <div class="video-titulo">
+                    <h3>Aplicação responsável de defensivos agrícolas</h3>
+                </div>
+                <video controls>
+                    <source src="aplicação responsavel.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+            </div>
+
+            <div class="video-descricao">
+                <h4>Descrição</h4>
+                <p>[ABERTURA — 0:00 a 0:15]<br>
+                Aplicar um defensivo agrícola não é simplesmente colocar o produto no equipamento e começar a trabalhar.<br>
+                Uma aplicação responsável exige planejamento, conhecimento e atenção às condições do ambiente.</p>
+                <p>[DESENVOLVIMENTO — 0:15 a 1:25]<br>
+                Primeiro, siga as orientações do rótulo e da bula, a orientação técnica quando aplicável e as exigências legais relacionadas ao uso do produto.<br>
+                Antes da aplicação, observe as condições climáticas. Vento, temperatura e umidade podem influenciar o comportamento das gotas e a eficiência da aplicação.<br>
+                Um dos principais riscos é a deriva, quando as gotas são deslocadas para fora do local que deveria receber o produto.<br>
+                Por isso, é importante avaliar a presença de pessoas, animais, residências, culturas vizinhas, cursos d'água, nascentes e outras áreas sensíveis.<br>
+                Outro ponto fundamental é manter o equipamento de aplicação regulado e em boas condições de manutenção. Equipamentos mal regulados podem provocar aplicação irregular e aumentar perdas e riscos.</p>
+                <p>[ENCERRAMENTO — 1:25 a 1:55]<br>
+                Uma aplicação responsável busca colocar o produto onde ele deve estar, na quantidade e nas condições recomendadas.<br>
+                Planejamento, regulagem, condições adequadas e respeito às orientações são fundamentais.<br>
+                Aplicar corretamente é proteger a lavoura, o trabalhador e o ambiente.<br>
+                Esse é o Campo Seguro.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Controle do banner rotativo
+        let slideAtual = 0;
+        const slides = document.querySelectorAll(".banner .slide");
+        const dots = document.querySelectorAll(".banner .dot");
+
+        function mostrarSlide(indice) {
+            slides[slideAtual].classList.remove("active");
+            dots[slideAtual].classList.remove("active");
+
+            slideAtual = (indice + slides.length) % slides.length;
+
+            slides[slideAtual].classList.add("active");
+            dots[slideAtual].classList.add("active");
+        }
+
+        function mudarSlide(direcao) {
+            mostrarSlide(slideAtual + direcao);
+        }
+
+        function irParaSlide(indice) {
+            mostrarSlide(indice);
+        }
+
+        setInterval(function() {
+            mudarSlide(1);
+        }, 5000);
+    </script>
     
-    <!-- LADO ESQUERDO: VÍDEO E TÍTULO -->
-    <div class="video-wrapper">
-        <h3 class="video-titulo">Por que falar sobre defensivos agrícolas?</h3>
-        <video controls>
-            <source src="ext video 1.mp4" type="video/mp4">
-            Seu navegador não suporta vídeos.
-        </video>
-    </div>
-
-    <!-- LADO DIREITO: DESCRIÇÃO -->
-    <div class="video-descricao">
-        <h4>Descrição</h4>
-        <p></p>
-        <p>[ABERTURA — 0:00 a 0:15]</p>
-
-<p>Olá! Seja bem-vindo à nossa série Campo Seguro.
-
-Hoje vamos falar sobre um assunto muito importante para quem trabalha no campo: os defensivos agrícolas.
-
-Mas afinal, por que precisamos falar tanto sobre esse tema?</p>
-
-<p>[DESENVOLVIMENTO — 0:15 a 1:20]</p>
-
-<p>Os defensivos agrícolas são produtos utilizados na agricultura para auxiliar no controle de pragas, doenças e plantas daninhas que podem prejudicar as lavouras.
-
-Quando utilizados de maneira correta, seguindo as recomendações técnicas e as orientações do fabricante, eles podem contribuir para a proteção da cultura e para a produtividade.
-
-Porém, esses produtos também exigem muito cuidado.
-
-O uso inadequado, a falta de equipamentos de proteção, o armazenamento incorreto ou o descarte inadequado podem causar acidentes, intoxicações, contaminação do ambiente e outros riscos para trabalhadores, familiares, animais e para a própria propriedade.
-
-Por isso, segurança não significa apenas saber aplicar.
-
-Ela começa desde o momento da compra, transporte e armazenamento, passa pela preparação e aplicação e continua até o descarte correto das embalagens.</p>
-
-<P>[ENCERRAMENTO — 1:20 a 1:50]</P>
-
-<p>E é justamente esse o objetivo da nossa série Campo Seguro: trazer informações simples e importantes para ajudar você a trabalhar com mais segurança e responsabilidade.
-
-Nos próximos vídeos, vamos falar sobre rótulo e bula, armazenamento correto, equipamentos de proteção e outros cuidados essenciais.
-
-Lembre-se: produto agrícola exige responsabilidade. Informação também é uma forma de proteção.</P>
-
-        <p>Até o próximo vídeo!</p>
-    </div>
-
-</div>
-        <p>---------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
-<div class="video-container">
-    
-    <!-- LADO ESQUERDO: VÍDEO E TÍTULO -->
-    <div class="video-wrapper">
-        <h3 class="video-titulo">Armazenamento correto de defensivos agrícolas</h3>
-        <video controls>
-            <source src="armazenamento.mp4" type="video/mp4">
-            Seu navegador não suporta vídeos.
-        </video>
-    </div>
-
-    <!-- LADO DIREITO: DESCRIÇÃO -->
-    <div class="video-descricao">
-        <h4>Descrição</h4>
-        <p></p>
-        <p>[ABERTURA — 0:00 a 0:15]
-
-Você sabe se os defensivos agrícolas da sua propriedade estão armazenados corretamente?
-
-O armazenamento é uma etapa muito importante para evitar acidentes e proteger pessoas, animais e o meio ambiente.</p>
-
-<p>[DESENVOLVIMENTO — 0:15 a 1:25]</p>
-
-<p>O local destinado aos defensivos deve ser adequado, organizado, seguro e de acesso restrito.
-
-Os produtos devem permanecer em suas embalagens originais, devidamente identificadas e fechadas, seguindo as orientações do rótulo e da bula.
-
-Nunca devemos armazenar defensivos junto com alimentos, bebidas, rações, medicamentos, sementes ou outros produtos que possam ser contaminados.
-
-Também é importante manter o ambiente organizado, evitando que as embalagens fiquem espalhadas ou em locais onde possam cair, romper ou sofrer vazamentos.
-
-O local deve oferecer condições para reduzir o risco de exposição de pessoas e animais e deve ser utilizado exclusivamente de acordo com as exigências e orientações aplicáveis à propriedade.</p>
-
-<p>[ALERTA — 1:25 a 1:40]</p>
-
-<p>E atenção:</p>
-
-Nunca transfira defensivos para garrafas, recipientes de alimentos ou outras embalagens que possam causar confusão.
-
-Além de ser perigoso, isso aumenta muito o risco de acidentes e intoxicações.</p>
-
-<p>[ENCERRAMENTO — 1:40 a 1:55]</p>
-
-<p>Então, lembre-se:</p>
-
-Armazene corretamente, mantenha o acesso restrito, organize os produtos e nunca misture defensivos com alimentos, rações ou medicamentos.
-
-Um armazenamento seguro começa com uma atitude simples: organização e responsabilidade.</p>
-
-<p>Esse é o Campo Seguro.</p>
-
-<P>Até o próximo vídeo!</p>
-    
-    </div>
-
-</div>
-
-<p>---------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
-
-<div class="video-container">
-    
-    <!-- LADO ESQUERDO: VÍDEO E TÍTULO -->
-    <div class="video-wrapper">
-        <h3 class="video-titulo">Equipamentos de Proteção Individual — EPIs</h3>
-        <video controls>
-            <source src="ext video 4.mp4" type="video/mp4">
-            Seu navegador não suporta vídeos.
-        </video>
-    </div>
-
-    <!-- LADO DIREITO: DESCRIÇÃO -->
-    <div class="video-descricao">
-        <h4>Descrição</h4>
-        <p></p>
-        <p>[ABERTURA — 0:00 a 0:15]</p>
-
-<p>Você sabe por que os equipamentos de proteção individual, os famosos *EPIs*, são tão importantes durante o trabalho com defensivos agrícolas?
-
-Eles são uma das principais medidas para reduzir a exposição do trabalhador.</p>
-<p>[DESENVOLVIMENTO — 0:15 a 1:25]</p>
-
-<p>Durante o preparo e a aplicação, pode existir risco de contato com o produto pela pele, pelos olhos ou pela respiração.
-
-Por isso, é fundamental utilizar os *EPIs indicados para aquela atividade e para aquele produto*.
-
-Mas atenção: não basta simplesmente colocar qualquer equipamento.
-
-É necessário verificar as orientações do *rótulo e da bula* e utilizar os equipamentos recomendados.
-
-Também é importante verificar se os EPIs estão em boas condições de uso.
-
-Equipamentos danificados, desgastados ou inadequados podem não oferecer a proteção esperada. 
-
-Depois da utilização, os equipamentos devem receber os cuidados de *limpeza, higienização, conservação e armazenamento*, conforme as orientações aplicáveis.</p>
-<p>[ALERTA — 1:25 a 1:40]</p>
-
-<p>Outra dica importante:</p>
-
-Evite tocar o rosto, comer, beber ou realizar outras atividades que possam aumentar a exposição enquanto estiver manuseando o produto.
-
-E lembre-se: o EPI não substitui os demais cuidados de segurança.
-</p>
-
-<p>[ENCERRAMENTO — 1:40 a 1:55]</p>
-
-<p>No Campo Seguro, a regra é simples:</p>
-
-<p>*EPI adequado, conservação correta e utilização responsável.*</p>
-
-<p>Esse é o Campo Seguro.</p>
-
-<P>Até o próximo vídeo!</p>
-    
-    </div>
-
-</div>
-
-<p>---------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
-
-<div class="video-container">
-    
-    <!-- LADO ESQUERDO: VÍDEO E TÍTULO -->
-    <div class="video-wrapper">
-        <h3 class="video-titulo"> Cuidados durante o manuseio de defensivos agrícolas</h3>
-        <video controls>
-            <source src="video 5.mp4" type="video/mp4">
-            Seu navegador não suporta vídeos.
-        </video>
-    </div>
-
-    <!-- LADO DIREITO: DESCRIÇÃO -->
-    <div class="video-descricao">
-        <h4>Descrição</h4>
-        <p>[ABERTURA — 0:00 a 0:15]</p>
-
-<p>Na hora de manusear um defensivo agrícola, pequenos cuidados podem evitar grandes problemas.
-
-Por isso, atenção a algumas regras básicas de segurança.
-
-<p>[DESENVOLVIMENTO — 0:15 a 1:25]</P>
-
-<p>Primeiro: *evite o contato direto com o produto*.
-
-Utilize os equipamentos de proteção indicados e siga exatamente as orientações do rótulo e da bula.
-
-Durante o manuseio, não coma, não beba e não fume.
-
-Também evite levar as mãos ao rosto ou tocar alimentos e objetos pessoais enquanto estiver trabalhando.
-
-A *higiene das mãos* é outro cuidado fundamental. Após o trabalho e sempre que necessário, lave as mãos adequadamente.
-
-Também precisamos ter atenção especial com *crianças e animais*.
-
-Eles nunca devem ter acesso ao produto, ao local de armazenamento ou à área onde esteja ocorrendo o manuseio.
-
-*[ALERTA — 1:20 a 1:40]*
-
-E nunca improvise.
-
-Não altere a forma de utilização por conta própria.
-
-As orientações do *rótulo e da bula* devem ser sempre respeitadas.
-<p>[ALERTA — 1:25 a 1:40]</p>
-
-<p>E nunca improvise.
-
-Não altere a forma de utilização por conta própria.
-
-As orientações do *rótulo e da bula* devem ser sempre respeitadas.
-</p>
-
-<p>[ENCERRAMENTO — 1:40 a 1:55]</p>
-
-<p>Manusear defensivos com segurança significa evitar contato, manter a higiene e impedir a exposição de pessoas e animais.
-
-*Informação e prevenção também fazem parte do trabalho no campo.</p>
-
-<p>Esse é o Campo Seguro.</p>
-
-<P>Até o próximo vídeo!</p>
-    
-    </div>
-
-</div>
-<script>
-    // Controle do banner rotativo
-    let slideAtual = 0;
-
-    const slides = document.querySelectorAll(".banner .slide");
-    const dots = document.querySelectorAll(".banner .dot");
-
-    function mostrarSlide(indice) {
-        slides[slideAtual].classList.remove("active");
-        dots[slideAtual].classList.remove("active");
-
-        slideAtual = (indice + slides.length) % slides.length;
-
-        slides[slideAtual].classList.add("active");
-        dots[slideAtual].classList.add("active");
-    }
-
-    // Botões de navegação
-    function mudarSlide(direcao) {
-        mostrarSlide(slideAtual + direcao);
-    }
-
-    // Navegação pelos pontinhos
-    function irParaSlide(indice) {
-        mostrarSlide(indice);
-    }
-
-    // Troca automática a cada 5 segundos
-    setInterval(function() {
-        mudarSlide(1);
-    }, 5000);
-</script>
-<script>
-    // Botão Clima
-    const botaoFundoClima = document.getElementById("botaoFundoclima");
-
-    botaoFundoClima.addEventListener("mouseenter", function() {
-        document.body.style.backgroundImage = 'url("chuva.gif")';
-    });
-
-    botaoFundoClima.addEventListener("mouseleave", function() {
-        document.body.style.backgroundImage = 'url("fundo.jpg")';
-    });
-
-
-    // Botão Avalie-nos
-    const botaoFundoAvaliacao = document.getElementById("botaoFundoavaliacao");
-
-    botaoFundoAvaliacao.addEventListener("mouseenter", function() {
-        document.body.style.backgroundImage = 'url("avaliacao.jpg")';
-    });
-
-    botaoFundoAvaliacao.addEventListener("mouseleave", function() {
-        document.body.style.backgroundImage = 'url("fundo.jpg")';
-    });
-
-
-    // Botão Preços
-    const botaoFundoPreco = document.getElementById("botaoFundopreco");
-
-    botaoFundoPreco.addEventListener("mouseenter", function() {
-        document.body.style.backgroundImage = 'url("preco.gif")';
-    });
-
-    botaoFundoPreco.addEventListener("mouseleave", function() {
-        document.body.style.backgroundImage = 'url("fundo.jpg")';
-    });
-</script>      
+    <script>
+        // Botão Clima
+        const botaoFundoClima = document.getElementById("botaoFundoclima");
+        botaoFundoClima.addEventListener("mouseenter", function() {
+            document.body.style.backgroundImage = 'url("chuva.gif")';
+        });
+        botaoFundoClima.addEventListener("mouseleave", function() {
+            document.body.style.backgroundImage = 'url("fundo 2.jpg")';
+        });
+
+        // Botão Avalie-nos
+        const botaoFundoAvaliacao = document.getElementById("botaoFundoavaliacao");
+        botaoFundoAvaliacao.addEventListener("mouseenter", function() {
+            document.body.style.backgroundImage = 'url("avaliacao.jpg")';
+        });
+        botaoFundoAvaliacao.addEventListener("mouseleave", function() {
+            document.body.style.backgroundImage = 'url("fundo 2.jpg")';
+        });
+
+        // Botão Preços
+        const botaoFundoPreco = document.getElementById("botaoFundopreco");
+        botaoFundoPreco.addEventListener("mouseenter", function() {
+            document.body.style.backgroundImage = 'url("preco.gif")';
+        });
+        botaoFundoPreco.addEventListener("mouseleave", function() {
+            document.body.style.backgroundImage = 'url("fundo 2.jpg")';
+        });
+    </script>      
 </body>
 </html>
