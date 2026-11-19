@@ -226,7 +226,8 @@
         /* ================= ESTILOS DOS BOTÕES DO TOPO ================= */
         .glow-on-hover-clima,
         .glow-on-hover-avaliacao,
-        .glow-on-hover-preco {
+        .glow-on-hover-preco,
+        .glow-on-hover-boi {
             width: 180px;
             height: 50px;
             border: none;
@@ -242,7 +243,8 @@
 
         .glow-on-hover-clima h2,
         .glow-on-hover-avaliacao h2,
-        .glow-on-hover-preco h2 {
+        .glow-on-hover-preco h2,
+        .glow-on-hover-boi h2 {
             font-size: 20px;
         }
 
@@ -264,7 +266,8 @@
             border-radius: 10px;
         }
 
-        .glow-on-hover-preco:before {
+        .glow-on-hover-preco:before,
+        .glow-on-hover-boi:before {
             content: '';
             background: linear-gradient(45deg, #00470f, #00ff55, #00ff80);
             position: absolute;
@@ -283,7 +286,8 @@
 
         .glow-on-hover-clima:hover:before,
         .glow-on-hover-avaliacao:hover:before,
-        .glow-on-hover-preco:hover:before {
+        .glow-on-hover-preco:hover:before,
+        .glow-on-hover-boi:hover:before {
             opacity: 1;
         }
 
@@ -323,15 +327,29 @@
             border-radius: 10px;
         }
 
+        .glow-on-hover-boi:after {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #889063;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+
         .glow-on-hover-clima:active,
         .glow-on-hover-avaliacao:active,
-        .glow-on-hover-preco:active {
+        .glow-on-hover-preco:active,
+        .glow-on-hover-boi:active {
             color: #000000;
         }
 
         .glow-on-hover-clima:active:after,
         .glow-on-hover-avaliacao:active:after,
-        .glow-on-hover-preco:active:after {
+        .glow-on-hover-preco:active:after,
+        .glow-on-hover-boi:active:after {
             background: white;
         }
 
@@ -382,7 +400,8 @@
             }
             .glow-on-hover-clima,
             .glow-on-hover-avaliacao,
-            .glow-on-hover-preco {
+            .glow-on-hover-preco,
+            .glow-on-hover-boi {
                 width: 100%;
                 max-width: 220px;
             }
@@ -440,6 +459,12 @@
             <a href="https://cepea.org.br/br/areas-de-pesquisa.aspx">
                 <button class="glow-on-hover-preco" id="botaoFundopreco">
                     <h2>Cepea</h2>
+                </button>
+            </a>
+
+            <a href="https://www.scotconsultoria.com.br/cotacoes/boi-gordo/">
+                <button class="glow-on-hover-boi" id="botaoFundoboi">
+                    <h2>Boi Gordo</h2>
                 </button>
             </a>
         </div>
@@ -526,7 +551,74 @@
             </div>
         </div>
 
-        <!-- VÍDEO 6 (Cor: Café Noir) -->
+        <!-- VÍDEO 5 (Cor: Moss Green) -->
+        <div class="video-container cor-moss">
+            <div class="video-wrapper">
+                <div class="video-titulo">
+                    <h3>Cuidados durante o manuseio de defensivos agrícolas</h3>
+                </div>
+                <video controls>
+                    <source src="cuidados.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+            </div>
+
+            <div class="video-descricao">
+                <h4>Descrição</h4>
+                <p>[ABERTURA — 0:00 a 0:15]<br>
+                Na hora de manusear um defensivo agrícola, pequenos cuidados podem evitar grandes problemas.<br>
+                Por isso, atenção a algumas regras básicas de segurança.</p>
+                <p>[DESENVOLVIMENTO — 0:15 a 1:20]<br>
+                Primeiro: evite o contato direto com o produto.<br>
+                Utilize os equipamentos de proteção indicados e siga exatamente as orientações do rótulo e da bula.<br>
+                Durante o manuseio, não coma, não beba e não fume.<br>
+                Também evite levar as mãos ao rosto ou tocar alimentos e objetos pessoais enquanto estiver trabalhando.<br>
+                A higiene das mãos é outro cuidado fundamental. Após o trabalho e sempre que necessário, lave as mãos adequadamente.<br>
+                Também precisamos ter atenção especial com crianças e animais.<br>
+                Eles nunca devem ter acesso ao produto, ao local de armazenamento ou à área onde esteja ocorrendo o manuseio.</p>
+                <p>[ALERTA — 1:20 a 1:40]<br>
+                E nunca improvise.<br>
+                Não altere a forma de utilização por conta própria.<br>
+                As orientações do rótulo e da bula devem ser sempre respeitadas.</p>
+                <p>[ENCERRAMENTO — 1:40 a 1:55]<br>
+                Manusear defensivos com segurança significa evitar contato, manter a higiene e impedir a exposição de pessoas e animais.<br>
+                Informação e prevenção também fazem parte do trabalho no campo.<br>
+                Esse é o Campo Seguro.</p>
+            </div>
+        </div>
+
+        <!-- PENÚLTIMO VÍDEO (Cor: Kombu Green) -->
+        <div class="video-container cor-kombu">
+            <div class="video-wrapper">
+                <div class="video-titulo">
+                    <h3>Aplicação responsável de defensivos agrícolas</h3>
+                </div>
+                <video controls>
+                    <source src="aplicação responsavel.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+            </div>
+
+            <div class="video-descricao">
+                <h4>Descrição</h4>
+                <p>[ABERTURA — 0:00 a 0:15]<br>
+                Aplicar um defensivo agrícola não é simplesmente colocar o produto no equipamento e começar a trabalhar.<br>
+                Uma aplicação responsável exige planejamento, conhecimento e atenção às condições do ambiente.</p>
+                <p>[DESENVOLVIMENTO — 0:15 a 1:25]<br>
+                Primeiro, siga as orientações do rótulo e da bula, a orientação técnica quando aplicável e as exigências legais relacionadas ao uso do produto.<br>
+                Antes da aplicação, observe as condições climáticas. Vento, temperatura e umidade podem influenciar o comportamento das gotas e a eficiência da aplicação.<br>
+                Um dos principais riscos é a deriva, quando as gotas são deslocadas para fora do local que deveria receber o produto.<br>
+                Por isso, é importante avaliar a presença de pessoas, animais, residências, culturas vizinhas, cursos d'água, nascentes e outras áreas sensíveis.<br>
+                Outro ponto fundamental é manter o equipamento de aplicação regulado e em boas condições de manutenção. Equipamentos mal regulados podem provocar aplicação irregular e aumentar perdas e riscos.</p>
+                <p>[ENCERRAMENTO — 1:25 a 1:55]<br>
+                Uma aplicação responsável busca colocar o produto onde ele deve estar, na quantidade e nas condições recomendadas.<br>
+                Planejamento, regulagem, condições adequadas e respeito às orientações são fundamentais.<br>
+                Aplicar corretamente é proteger a lavoura, o trabalhador e o ambiente.<br>
+                Esse é o Campo Seguro.</p>
+            </div>
+        </div>
+
+        <!-- ÚLTIMO VÍDEO (Cor: Café Noir) -->
         <div class="video-container cor-cafe">
             <div class="video-wrapper">
                 <div class="video-titulo">
@@ -556,37 +648,6 @@
                 Ela é uma ferramenta para ajudar o produtor a buscar informação, planejar e tomar decisões com mais segurança.<br>
                 Use a tecnologia a seu favor.<br>
                 Informação confiável também é uma ferramenta de trabalho.<br>
-                Esse é o Campo Seguro.</p>
-            </div>
-        </div>
-
-        <!-- VÍDEO 7 (Cor: Kombu Green) -->
-        <div class="video-container cor-kombu">
-            <div class="video-wrapper">
-                <div class="video-titulo">
-                    <h3>Aplicação responsável de defensivos agrícolas</h3>
-                </div>
-                <video controls>
-                    <source src="aplicação responsavel.mp4" type="video/mp4">
-                    Seu navegador não suporta vídeos.
-                </video>
-            </div>
-
-            <div class="video-descricao">
-                <h4>Descrição</h4>
-                <p>[ABERTURA — 0:00 a 0:15]<br>
-                Aplicar um defensivo agrícola não é simplesmente colocar o produto no equipamento e começar a trabalhar.<br>
-                Uma aplicação responsável exige planejamento, conhecimento e atenção às condições do ambiente.</p>
-                <p>[DESENVOLVIMENTO — 0:15 a 1:25]<br>
-                Primeiro, siga as orientações do rótulo e da bula, a orientação técnica quando aplicável e as exigências legais relacionadas ao uso do produto.<br>
-                Antes da aplicação, observe as condições climáticas. Vento, temperatura e umidade podem influenciar o comportamento das gotas e a eficiência da aplicação.<br>
-                Um dos principais riscos é a deriva, quando as gotas são deslocadas para fora do local que deveria receber o produto.<br>
-                Por isso, é importante avaliar a presença de pessoas, animais, residências, culturas vizinhas, cursos d'água, nascentes e outras áreas sensíveis.<br>
-                Outro ponto fundamental é manter o equipamento de aplicação regulado e em boas condições de manutenção. Equipamentos mal regulados podem provocar aplicação irregular e aumentar perdas e riscos.</p>
-                <p>[ENCERRAMENTO — 1:25 a 1:55]<br>
-                Uma aplicação responsável busca colocar o produto onde ele deve estar, na quantidade e nas condições recomendadas.<br>
-                Planejamento, regulagem, condições adequadas e respeito às orientações são fundamentais.<br>
-                Aplicar corretamente é proteger a lavoura, o trabalhador e o ambiente.<br>
                 Esse é o Campo Seguro.</p>
             </div>
         </div>
@@ -649,12 +710,21 @@
             document.body.style.backgroundImage = 'url("fundo 2.jpg")';
         });
 
-        // Botão Preços
+        // Botão Preços (Cepea)
         const botaoFundoPreco = document.getElementById("botaoFundopreco");
         botaoFundoPreco.addEventListener("mouseenter", function() {
             document.body.style.backgroundImage = 'url("preco.gif")';
         });
         botaoFundoPreco.addEventListener("mouseleave", function() {
+            document.body.style.backgroundImage = 'url("fundo 2.jpg")';
+        });
+
+        // Botão Boi Gordo (Scot Consultoria)
+        const botaoFundoBoi = document.getElementById("botaoFundoboi");
+        botaoFundoBoi.addEventListener("mouseenter", function() {
+            document.body.style.backgroundImage = 'url("scot.gif")';
+        });
+        botaoFundoBoi.addEventListener("mouseleave", function() {
             document.body.style.backgroundImage = 'url("fundo 2.jpg")';
         });
     </script>      
